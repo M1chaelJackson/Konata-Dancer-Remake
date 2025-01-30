@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/KonataDancer">
+        <file>resource/konata/Konata.gif</file>
+    </qresource>
+</RCC>
