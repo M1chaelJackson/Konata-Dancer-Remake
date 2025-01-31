@@ -68,16 +68,26 @@ public:
         setRenderHint(QPainter::SmoothPixmapTransform);
         setStyleSheet("background: transparent; border: none;");
 
-        CharacterEntity* character = new CharacterEntity(gifPath, QApplication::primaryScreen()->geometry());
+        // get screen geometry (for full screen or multiple screens)
+        QRect totalGeometry;
+        const QList<QScreen*> screens = QGuiApplication::screens();
+        for (QScreen* screen : screens) {
+            totalGeometry = totalGeometry.united(screen->geometry());
+        }
+
+        // set window geometry to cover the entire screen(s)
+        setGeometry(totalGeometry);
+
+        // create CharacterEntity and add it to the scene
+        CharacterEntity* character = new CharacterEntity(gifPath, totalGeometry);
         scene->addItem(character);
 
-        // resize window to match GIF size
+        // resize window to match the total screen area
         if (!character->pixmap().isNull()) {
-            setFixedSize(character->pixmap().size());
+            setFixedSize(totalGeometry.size());
         }
     }
 
 private:
     QGraphicsScene* scene;
 };
-
