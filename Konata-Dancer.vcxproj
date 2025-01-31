@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -93,9 +93,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtRcc Include="KonataDancer.qrc" />
-    <QtUic Include="KonataDancer.ui" />
-    <QtMoc Include="KonataDancer.h" />
-    <ClCompile Include="KonataDancer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
