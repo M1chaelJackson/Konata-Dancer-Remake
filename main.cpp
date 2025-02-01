@@ -85,11 +85,11 @@ int main(int argc, char* argv[]) {
 
 
             // move to original konata entity
-            hello->move(globalPos.x() + 50 - 3000, globalPos.y() - 1110); // the current calculation/geometry system is unstable, subdivision should fix the coordinates
+            hello->move(globalPos.x() - 2850, globalPos.y() - 1010); // the current calculation/geometry system is unstable, subdivision should fix the coordinates
             qDebug() << "Introduction entity spawned at:" << hello->pos();
 
 
-            QTimer::singleShot(4600, [hello]() {
+            QTimer::singleShot(4600, [hello]() { // make the entity temporary - lasts 4.6 seconds
                 hello->close();
                 hello->deleteLater(); // optimize memory consumption
             });
