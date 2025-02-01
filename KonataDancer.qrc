@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/KonataDancer">
         <file>resource/konata/Konata.gif</file>
+        <file>resource/ui/tray-icon.png</file>
+        <file>resource/konata/hello.gif</file>
     </qresource>
 </RCC>
